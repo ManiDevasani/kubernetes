@@ -3,7 +3,7 @@ kind: Service
 metadata:
   name: chatapp-service
   annotations:
-     external-dns.alpha.kubernetes.io/hostname: chatapp.devmani.ml
+     external-dns.alpha.kubernetes.io/hostname: devmani.ml
   labels:
    run: chatapp
 spec:

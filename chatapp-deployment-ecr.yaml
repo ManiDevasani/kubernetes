@@ -17,3 +17,6 @@ spec:
         image: 416604440517.dkr.ecr.ap-south-1.amazonaws.com/chatapp:latest    
         ports:
         - containerPort: 8000
+      imagePullSecrets:
+      - name: awsregcred
+

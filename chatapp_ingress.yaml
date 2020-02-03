@@ -1,0 +1,30 @@
+
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: chatapp-ingress
+  annotations:
+   #nginx.ingress.kubernetes.io/rewrite-target: /
+   kubernetes.io/ingress.class: "nginx"
+   kubernetes.io/tls-acme: "true"    
+spec:
+  rules:
+  - host: chatapp.devmani.ml  # Replace with the URL you want.
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: chatapp
+          servicePort: 80
+  - host: fundoo.devmani.ml  # Replace with the URL you want.
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: chatapp
+          servicePort: 80
+  tls:
+    - secretName: key-tls
+      hosts:
+        - chatapp.devmani.ml
+        - fundoo.devmani.ml 
